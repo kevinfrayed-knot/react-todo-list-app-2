@@ -73,8 +73,8 @@ function TodoList({ title }) {
   return (
     <div className="container">
       <h4>{title}</h4>
-      <div>
-        <span>Add New Task: </span>
+      <span>Add New Task: </span>
+      <div className="add-new-container">
         <input
           type="text"
           value={txtnewitem}
@@ -84,9 +84,9 @@ function TodoList({ title }) {
           placeholder="* Add new item"
         />
         {" "}
-        <button onClick={handleAddNewItem}>Add</button>
+        <button className="add-btn" onClick={handleAddNewItem}>Add</button>
         {" "}
-        <button onClick={handleReset}>Reset</button> {/* Reset button */}
+        <button className="reset-btn" onClick={handleReset}>Reset</button> {/* Reset button */}
       </div>
       <p>{msg}</p>
       <div>

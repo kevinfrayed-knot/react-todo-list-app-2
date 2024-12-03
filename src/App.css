@@ -5,8 +5,8 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif; /* Use Google Fonts */
   background: linear-gradient(to bottom, #ffefba, #ffffff); /* Light gradient background */
-  height: 100vh;
-  overflow: hidden;
+  height: 80vh;
+  overflow: scroll;
 }
 
 /* Navigation menu styles */
@@ -35,20 +35,38 @@ nav a:hover {
   text-decoration: underline;
 }
 
+.header-container {
+  margin-top: 6%;
+}
+
 /* Ensure the components occupy the full viewport height */
 main, .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 90vh;
   box-sizing: border-box;
+  width: 90%; /* Set the content width */
+  margin: 0 auto; /* Center horizontally */
+}
+
+#root > main > section.todo-list-container {
+  width: 90%;
 }
 
 /* Gradient background for components */
 .container {
   background: linear-gradient(to bottom, #ffffff, #f1f1f1);
-  width: 100%;
+  padding: 20px; /* Add some padding */
+  border-radius: 10px; /* Slightly rounded corners */
+}
+
+#root > main > section > div > div.add-new-container {
+  display: inline-flexbox;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 /* Buttons and inputs */
@@ -62,6 +80,26 @@ button {
   font-size: 1rem;
 }
 
+.add-btn {
+  background-color: #ff2e2e;
+  width: 45%;
+}
+
+.add-btn:hover {
+  background-color: #07ba07;
+  width: 45%;
+}
+
+.reset-btn {
+  background-color: #ff2e2e;
+  width: 45%;
+}
+
+.reset-btn:hover {
+  background-color: #07ba07;
+  width: 45%;
+}
+
 button:hover {
   background-color: #45a049; /* Darker green on hover */
 }
@@ -72,8 +110,8 @@ input[type="text"], textarea {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
-  width: 80%; /* Make input fields wider */
-  max-width: 500px;
+  width: 100%; /* Make input fields span full container width */
+  max-width: 500px; /* Limit the maximum width */
 }
 
 textarea {
